@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "puppeteer": "^21.3.6",
-    "simple-git": "^3.20.0"
-  }
-}
