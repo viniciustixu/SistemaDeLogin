@@ -15,7 +15,7 @@ jobs:
 
       - name: Set default page
         run: |
-          echo 'index.php' > build/.nojekyll
+          echo 'index.php' > .nojekyll
         working-directory: ./  # Diretório raiz do seu projeto
 
       - name: Commit and push changes
