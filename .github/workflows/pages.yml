@@ -1,0 +1,28 @@
+name: Change GitHub Pages default page
+
+on:
+  push:
+    branches:
+      - main  # ou o nome da sua branch principal
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set default page
+        run: |
+          echo 'index.php' > build/.nojekyll
+        working-directory: ./  # Diretório raiz do seu projeto
+
+      - name: Commit and push changes
+        run: |
+          git config user.name 'GitHub Actions'
+          git config user.email 'github-actions@users.noreply.github.com'
+          git add .
+          git commit -m "Set default page to index.php"
+          git push
+        working-directory: ./  # Diretório raiz do seu projeto
